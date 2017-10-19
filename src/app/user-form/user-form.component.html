@@ -1,3 +1,7 @@
-<p>
-  user-form works!
-</p>
+<!-- chu $event trong showName($event) la co dinh va ko dc thay doi! -->
+<!-- <input placeholder="username" (keyup)="showName($event)">
+<h2>Your name is: {{name}}</h2> -->
+
+<!-- Su dung cach 2-ways binding -->
+<input placeholder="username" [(ngModel)]="name">
+<h2>Your name is: {{name}}</h2>

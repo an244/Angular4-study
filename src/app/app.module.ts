@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// them FormsModule de su dung 2-ways binding
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { WordComponent } from './word/word.component';
 import { BookComponent } from './book/book.component';
@@ -14,7 +17,10 @@ import { UserFormComponent } from './user-form/user-form.component';
     UserFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    
+    // them FormsModule de su dung 2-ways binding
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

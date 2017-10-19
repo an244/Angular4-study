@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserFormComponent implements OnInit {
 
+  name = '';
   constructor() { }
 
   ngOnInit() {
   }
 
+  showName(bien_bat_ky) {
+    this.name = bien_bat_ky.target.value;
+  }
 }
