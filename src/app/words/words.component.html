@@ -8,11 +8,25 @@
 <!-- function addWord() ko can co parameter truyen vo vi da co [(ngModel)] lam data binding voi textbox roi -->
 <button (click)="isShowForm=true" *ngIf="!isShowForm" > Show/Hide</button>
 
+<!-- Loc mang de hien thi ket qua -->
+<select [(ngModel)]= "filterStatus">
+  <option value="XEM_TAT_CA"> Xem tat ca</option>
+  <option value="XEM_DA_NHO"> Xem tu da nho</option>
+  <option value="XEM_CHUA_NHO"> Xem tu chua nho</option>
+</select>
 <!-- Hien thi ra danh sach bang cach su dung ngFor -->
-<div *ngFor = "let word of arrWords" class="word">
+<div *ngFor = "let word of arrWords" >
+  <!-- Filter cach 1:    -->
+  <!-- Angular se rang buoc (binding) va lay option ma user chon roi so sanh xem no thuoc 'XEM_TAT_CA', hay 'XEM_CHUA_NHO', hay 'XEM_DA_NHO'
+  sau khi biet user chon cai option nao thi angular se xet them thuoc tinh 'word.memorized' la true hay false de hien thi danh sach. -->
+  <!-- <div class="word" *ngIf="(filterStatus=== 'XEM_TAT_CA')|| (filterStatus=== 'XEM_DA_NHO' && word.memorized)||(filterStatus=== 'XEM_CHUA_NHO' && !word.memorized)"> -->
+
+  <!-- Filter cach 2:    -->
+  <div class="word" *ngIf="getShowStatus(word.memorized">  
   <h3 [ngStyle]="{color: word.memorized ? 'green':'red'}">
     {{word.en}}
   </h3>
   <p>{{word.vn}}</p>
   <button (click)="xoaWord(word.id)"> Xoa</button>
+  </div>
 </div>

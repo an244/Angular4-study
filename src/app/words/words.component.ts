@@ -10,6 +10,8 @@ export class WordsComponent implements OnInit {
   newEn = '';
   newVn= '';
   isShowForm = false;
+  filterStatus = 'XEM_TAT_CA';
+
   arrWords = [
     { id: 1, en: 'action', vn: 'hành động', memorized: true },
     { id: 2, en: 'actor', vn: 'diễn viên', memorized: false },
@@ -18,6 +20,14 @@ export class WordsComponent implements OnInit {
     { id: 5, en: 'bath', vn: 'tắm', memorized: false },
     { id: 6, en: 'bedroom', vn: 'phòng ngủ', memorized: true }
   ];
+
+    // Filter cach 2:
+    getShowStatus(memorized: boolean){
+      const dkXemTatCa = this.filterStatus === 'XEM_TAT_CA';
+      const dkXemDaNho = this.filterStatus === 'XEM_DA_NHO' && memorized;
+      const dkXemChuaNho = this.filterStatus === 'XEM_CHUA_NHO' && !memorized;
+      return dkXemChuaNho || dkXemDaNho || dkXemTatCa;
+    }
 
   // function addWord() ko can co parameter truyen vo vi da co [(ngModel)] lam data binding voi textbox roi
   addWord() {
