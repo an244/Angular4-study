@@ -23,7 +23,7 @@ export class WordsComponent implements OnInit {
   addWord() {
     // unshift de hien phan tu moi len dau danh sach
     this.arrWords.unshift({
-      id: this.arrWords.length++,
+      id: this.arrWords.length + 1, // ko dc viet tat arrWords.length ++
       en: this.newEn,
       vn: this.newVn,
       memorized: false
@@ -31,6 +31,11 @@ export class WordsComponent implements OnInit {
     this.newEn = '';
     this.newVn = '';
     this.isShowForm = false;
+  }
+
+  xoaWord(id: number) {
+    const index = this.arrWords.findIndex(word => word.id === id);
+    this.arrWords.splice(index, 1);
   }
   constructor() { }
 

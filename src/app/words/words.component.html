@@ -8,10 +8,11 @@
 <!-- function addWord() ko can co parameter truyen vo vi da co [(ngModel)] lam data binding voi textbox roi -->
 <button (click)="isShowForm=true" *ngIf="!isShowForm" > Show/Hide</button>
 
-<div *ngFor = "let word of arrWords">
+<!-- Hien thi ra danh sach bang cach su dung ngFor -->
+<div *ngFor = "let word of arrWords" class="word">
   <h3 [ngStyle]="{color: word.memorized ? 'green':'red'}">
     {{word.en}}
   </h3>
-
   <p>{{word.vn}}</p>
+  <button (click)="xoaWord(word.id)"> Xoa</button>
 </div>
