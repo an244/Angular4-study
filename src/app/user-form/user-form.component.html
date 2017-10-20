@@ -7,8 +7,17 @@
 <h2>Your name is: {{name}}</h2> -->
 
 <!-- Su dung Template reference variable -->
-<input placeholder="username" [(ngModel)]="name" #txtUsername>
+<!-- <input placeholder="username" [(ngModel)]="name" #txtUsername>
 <h2>Your name is: {{name}}</h2>
+txtUsername co ra nhieu thuoc tinh va value la 1 trog so do. -->
+<!-- <code>{{ txtUsername.value | json }}</code> -->
 
-<!-- txtUsername co ra nhieu thuoc tinh va value la 1 trog so do. -->
-<code>{{ txtUsername.value | json }}</code>
+<!-- Su dung style binding va class -->
+<input placeholder="username" [(ngModel)]="name" #txtUsername>
+<!-- Khi muon binding style thi lam nhu sau: -->
+<!-- Neu de [style.color]="red" thi angular se hieu la se di tim variable red
+Neu muon hien thanh thuoc tinh thi them '' nhu sau  -->
+<!-- <h2 [style.color]="'red'">Your name is: {{name}}</h2> -->
+<!-- khi chuoi name la chan thi se mau do, neu la le thi se mau den: -->
+<h2 [style.color]="name.length % 2===0 ? 'red' : 'black'">Your name is: {{name}}</h2>
+<div [class]="name.length % 2===0 ? 'circle' : 'square'"></div>
