@@ -1,0 +1,13 @@
+<input placeholder="English" [(ngModel)]="newEn"/>
+<input placeholder="Vietnames" [(ngModel)]="newVn"/>
+<br>
+<!-- function addWord() ko can co parameter truyen vo vi da co [(ngModel)] lam data binding voi textbox roi -->
+<button (click)="addWord()"> Add</button>
+
+<div *ngFor = "let word of arrWords">
+  <h3 [ngStyle]="{color: word.memorized ? 'green':'red'}">
+    {{word.en}}
+  </h3>
+
+  <p>{{word.vn}}</p>
+</div>
