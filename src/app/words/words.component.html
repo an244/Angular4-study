@@ -1,8 +1,12 @@
-<input placeholder="English" [(ngModel)]="newEn"/>
-<input placeholder="Vietnames" [(ngModel)]="newVn"/>
+<div *ngIf = "isShowForm">
+  <input placeholder="English" [(ngModel)]="newEn"/>
+  <input placeholder="Vietnames" [(ngModel)]="newVn"/>
+  <br>
+  <button (click)="addWord()"> Add</button>
+</div>
 <br>
 <!-- function addWord() ko can co parameter truyen vo vi da co [(ngModel)] lam data binding voi textbox roi -->
-<button (click)="addWord()"> Add</button>
+<button (click)="isShowForm=true" *ngIf="!isShowForm" > Show/Hide</button>
 
 <div *ngFor = "let word of arrWords">
   <h3 [ngStyle]="{color: word.memorized ? 'green':'red'}">

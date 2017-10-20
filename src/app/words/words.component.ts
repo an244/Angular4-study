@@ -9,7 +9,7 @@ export class WordsComponent implements OnInit {
 
   newEn = '';
   newVn= '';
-
+  isShowForm = false;
   arrWords = [
     { id: 1, en: 'action', vn: 'hành động', memorized: true },
     { id: 2, en: 'actor', vn: 'diễn viên', memorized: false },
@@ -30,6 +30,7 @@ export class WordsComponent implements OnInit {
     });
     this.newEn = '';
     this.newVn = '';
+    this.isShowForm = false;
   }
   constructor() { }
 
