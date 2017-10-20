@@ -3,3 +3,10 @@
   struct works!
 </p>
 <button (click)="isShow = !isShow">Show/Hide</button>
+
+<!-- ngFor -->
+<ul>
+  <li *ngFor = "let MonHoc of arrSubjects">
+    <p>{{'Subject: ' + MonHoc}}</p>
+  </li>
+</ul>
