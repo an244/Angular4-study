@@ -19,5 +19,9 @@ txtUsername co ra nhieu thuoc tinh va value la 1 trog so do. -->
 Neu muon hien thanh thuoc tinh thi them '' nhu sau  -->
 <!-- <h2 [style.color]="'red'">Your name is: {{name}}</h2> -->
 <!-- khi chuoi name la chan thi se mau do, neu la le thi se mau den: -->
-<h2 [style.color]="name.length % 2===0 ? 'red' : 'black'">Your name is: {{name}}</h2>
-<div [class]="name.length % 2===0 ? 'circle' : 'square'"></div>
+<!-- <h2 [style.color]="name.length % 2===0 ? 'red' : 'black'">Your name is: {{name}}</h2>
+<div [class]="name.length % 2===0 ? 'circle' : 'square'"></div> -->
+
+<!-- Su dung ngStyle, ngClass khi co nhieu styles/class trong 1 the tag -->
+<h2 [ngStyle]="name.length % 2===0 ? evenStyle : oddStyle">Your name is: {{name}}</h2>
+<div [ngClass]="name.length % 2===0 ? 'circle' : 'square'"></div>
