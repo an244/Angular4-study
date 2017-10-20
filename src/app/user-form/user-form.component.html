@@ -3,5 +3,12 @@
 <h2>Your name is: {{name}}</h2> -->
 
 <!-- Su dung cach 2-ways binding -->
-<input placeholder="username" [(ngModel)]="name">
+<!-- <input placeholder="username" [(ngModel)]="name">
+<h2>Your name is: {{name}}</h2> -->
+
+<!-- Su dung Template reference variable -->
+<input placeholder="username" [(ngModel)]="name" #txtUsername>
 <h2>Your name is: {{name}}</h2>
+
+<!-- txtUsername co ra nhieu thuoc tinh va value la 1 trog so do. -->
+<code>{{ txtUsername.value | json }}</code>
