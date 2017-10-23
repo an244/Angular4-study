@@ -13,11 +13,11 @@ export class ChildComponent implements OnInit {
 
   //Buoc 6: khai bao su kien o Buoc 2
   ChildClickIncreaseForParent(){
-    this.myClickEventFromParent.emit(true);
+    this.myClickEventFromParent.emit(true);//gui tham so truyen vao
   }
 
   ChildClickDecreaseForParent() {
-    this.myClickEventFromParent.emit(false);
+    this.myClickEventFromParent.emit(false);//gui tham so truyen vao
   }
   constructor() {}
     ngOnInit() {
