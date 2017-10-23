@@ -22,13 +22,13 @@
   <!-- <div class="word" *ngIf="(filterStatus=== 'XEM_TAT_CA')|| (filterStatus=== 'XEM_DA_NHO' && word.memorized)||(filterStatus=== 'XEM_CHUA_NHO' && !word.memorized)"> -->
 
   <!-- Filter cach 2:    -->
-  <div class="word" *ngIf="getShowStatus(word.memorized">  
+  <div class="word" *ngIf="getShowStatus(word.memorized)">  
   <h3 [ngStyle]="{color: word.memorized ? 'green':'red'}">
     {{word.en}}
   </h3>
   <p>{{word.vn}}</p>
   <button (click)="xoaWord(word.id)"> Xoa</button>
-  
+
   <!-- Co the thay doi trang thai cua phan tu trong mang hien thi va gia tri chu cua button -->
   <button (click)="word.memorized = !word.memorized">
      {{word.memorized ? 'Da thuoc' : 'Chua thuoc'}}
