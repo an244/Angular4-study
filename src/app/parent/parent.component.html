@@ -10,10 +10,15 @@
 <br>
 <div class="Parent-Click-Child-Show">
 <p>Parent component: Parent with button to increase Child's value:
-    <button (click)="childApp.valueChild = childApp.valueChild + 1">
+    <!-- B5 VC: gan function onAddForChild vo button (da co func trong B4 VC) -->
+    <button (click)="onAddForChild()">[Parent] Increase [child] value</button>
+  <app-child (myClickEventFromParent)="changeValue($event)"></app-child>  <!-- $event phai bat buoc de giong vay! KO dc thay doi ten khac-->
+  <!-- <app-child></app-child> -->
+
+    <!-- <button (click)="childApp.valueChild = childApp.valueChild + 1">
         [Parent] Increase [child] value
-    </button>
+    </button> -->
     <!-- Su dung template variable -->
-    <app-child #childApp></app-child> <!--#childApp có thể đặt tên gì bất kì -->
+    <!-- <app-child #childApp></app-child> #childApp có thể đặt tên gì bất kì -->
 </p>
 </div>
