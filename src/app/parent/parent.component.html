@@ -1,6 +1,19 @@
-<p>Parent with value: {{value}}
+<div class="Child-Click-Parent-Show">
+<p>Parent component: Parent with value: {{valueParent}}
   <!-- Buoc 1: dat 1 cai su kien trong app-child
     myClickEventFromParent co the dat 1 ten khac bat ki 
       bien 'value/changeValue()' da dc khai bao torng parent.component.ts-->
   <app-child (myClickEventFromParent)="changeValue($event)"></app-child>  <!-- $event phai bat buoc de giong vay! KO dc thay doi ten khac-->
 </p>
+</div>
+<br>
+<br>
+<div class="Parent-Click-Child-Show">
+<p>Parent component: Parent with button to increase Child's value:
+    <button (click)="childApp.valueChild = childApp.valueChild + 1">
+        [Parent] Increase [child] value
+    </button>
+    <!-- Su dung template variable -->
+    <app-child #childApp></app-child> <!--#childApp có thể đặt tên gì bất kì -->
+</p>
+</div>

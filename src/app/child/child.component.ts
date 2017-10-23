@@ -7,17 +7,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
-
-  //Buoc 5: gan su kien o Buoc 1 vao @Output
+  valueChild = 0;
+  
+  // Buoc 5: gan su kien o Buoc 1 vao @Output
   @Output() myClickEventFromParent = new EventEmitter<boolean>(); // them <boolean> de dc chinh xac hon khi su dung o duoi
 
-  //Buoc 6: khai bao su kien o Buoc 2
-  ChildClickIncreaseForParent(){
-    this.myClickEventFromParent.emit(true);//gui tham so truyen vao
+  // Buoc 6: khai bao su kien o Buoc 2
+  ChildClickIncreaseForParent() {
+    this.myClickEventFromParent.emit(true); // gui tham so truyen vao
   }
 
   ChildClickDecreaseForParent() {
-    this.myClickEventFromParent.emit(false);//gui tham so truyen vao
+    this.myClickEventFromParent.emit(false); // gui tham so truyen vao
   }
   constructor() {}
     ngOnInit() {

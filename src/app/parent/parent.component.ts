@@ -7,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
   
-  value = 0;
+  valueParent = 0;
   constructor() { }
   ngOnInit() {
   }
 
   //Buoc 3: khai bao func changeValue() da dc su dung o buoc 1.
   changeValue(isAdd: boolean) {
-    if(isAdd=== true) {this.value += 1};
-    if(isAdd=== false) {this.value -= 1};
+    if(isAdd=== true) {this.valueParent += 1};
+    if(isAdd=== false) {this.valueParent -= 1};
    
   }
 }
