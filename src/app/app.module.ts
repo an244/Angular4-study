@@ -12,6 +12,8 @@ import { StructComponent } from './struct/struct.component';
 import { WordsComponent } from './words/words.component';
 import { PersonComponent } from './person/person.component';
 import { ListPersonComponent } from './list-person/list-person.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ListPersonComponent } from './list-person/list-person.component';
     StructComponent,
     WordsComponent,
     PersonComponent,
-    ListPersonComponent
+    ListPersonComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

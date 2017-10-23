@@ -1,0 +1,6 @@
+<p>Parent with value: {{value}}
+  <!-- Buoc 1: dat 1 cai su kien trong app-child
+    myClickEventFromParent co the dat 1 ten khac bat ki 
+      bien 'value' da dc khai bao torng parent.component.ts-->
+  <app-child (myClickEventFromParent)="value = value +1"></app-child>
+</p>
