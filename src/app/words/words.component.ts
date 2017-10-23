@@ -31,6 +31,7 @@ export class WordsComponent implements OnInit {
 
   // function addWord() ko can co parameter truyen vo vi da co [(ngModel)] lam data binding voi textbox roi
   addWord() {
+    if (this.newEn !== '' && this.newVn !== '') {
     // unshift de hien phan tu moi len dau danh sach
     this.arrWords.unshift({
       id: this.arrWords.length + 1, // ko dc viet tat arrWords.length ++
@@ -40,6 +41,7 @@ export class WordsComponent implements OnInit {
     });
     this.newEn = '';
     this.newVn = '';
+  }
     this.isShowForm = false;
   }
 

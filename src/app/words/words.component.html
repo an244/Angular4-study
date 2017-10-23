@@ -28,5 +28,11 @@
   </h3>
   <p>{{word.vn}}</p>
   <button (click)="xoaWord(word.id)"> Xoa</button>
+  
+  <!-- Co the thay doi trang thai cua phan tu trong mang hien thi va gia tri chu cua button -->
+  <button (click)="word.memorized = !word.memorized">
+     {{word.memorized ? 'Da thuoc' : 'Chua thuoc'}}
+  </button>
+
   </div>
 </div>
