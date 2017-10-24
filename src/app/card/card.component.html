@@ -1,0 +1,13 @@
+<div class="card">
+  <!-- <p>Khoa Pham Training</p> Thay the <p> bang <ng-content>
+    sau do wa app.component de thay doi -->
+  <!-- <ng-content></ng-content> -->
+
+  <!-- 2 bien -->
+  <div class="header">
+    <ng-content select=".card-header"></ng-content>
+  </div>
+  <div class="body">
+    <ng-content select=".card-body"></ng-content>
+  </div>
+</div>
