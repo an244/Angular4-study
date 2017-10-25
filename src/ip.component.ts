@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 // B4: them component IPService ben ip.service.ts vo
 import {IPService} from './ip.service';
 
@@ -9,11 +9,13 @@ import {IPService} from './ip.service';
     providers: [IPService]
 })
 
-export class IpComponent {
+export class IpComponent implements OnInit {
     myIP: string;
     // B6: tao 1 doi tuong thuoc IPService
-    constructor(private ipService: IPService) {
+    constructor(private ipService: IPService) {}
+
+    ngOnInit(): void {
         this.ipService.getIp()
-         .then(ip => this.myIP = ip);
+        .then(ip => this.myIP = ip);
     }
 }
