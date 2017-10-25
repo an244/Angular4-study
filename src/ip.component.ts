@@ -1,22 +1,19 @@
 import {Component} from '@angular/core';
-import {Http} from '@angular/http';
-
-// de bien cac Observable thanh Promise
-import 'rxjs/add/operator/toPromise';
+// B4: them component IPService ben ip.service.ts vo
+import {IPService} from './ip.service';
 
 @Component({
     selector: 'app-ip',
-    template: '<h3>My ip: {{myIP|json}}</h3>'
+    template: '<h3>My ip: {{myIP|json}}</h3>',
+    // B5: them thuoc tinh providers
+    providers: [IPService]
 })
 
 export class IpComponent {
     myIP: string;
-    constructor(private http: Http) {
-        this.http.get('http://ip.jsontest.com')
-        // mac dinh http.get() se ko co Promise nen phai import o tren
-         .toPromise()
-          .then(res => res.json())
-          .then(resJson => this.myIP = resJson)
-          .catch(err => console.log(err.message));
+    // B6: tao 1 doi tuong thuoc IPService
+    constructor(private ipService: IPService) {
+        this.ipService.getIp()
+         .then(ip => this.myIP = ip);
     }
 }
