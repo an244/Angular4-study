@@ -20,6 +20,10 @@ import { LearnPipeComponent } from './learn-pipe/learn-pipe.component';
 // de su dung Round Pipe
 import { RoundPipe } from '../round.pipe';
 
+// de su dung Service, them trong phan imports[] nua
+import { IpComponent } from '../ip.component';
+import {HttpModule} from '@angular/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,11 +38,13 @@ import { RoundPipe } from '../round.pipe';
     ChildComponent,
     CardComponent,
     LearnPipeComponent,
+    IpComponent,
     RoundPipe
   ],
   imports: [
     BrowserModule,
-    
+    // them de su dung Service
+    HttpModule,
     // them FormsModule de su dung 2-ways binding
     FormsModule
   ],
