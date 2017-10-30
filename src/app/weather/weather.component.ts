@@ -12,7 +12,11 @@ export class WeatherComponent {
   txtCityName = '';
   temperature = '';
 
-  constructor(private weatherServe: WeatherService) { }
+  constructor(private weatherServe: WeatherService) {
+    weatherServe.getLocalhost3000()
+     .then(res => console.log(res))
+     .catch(err => console.log(err));
+  }
   onGetWeather() {
     this.weatherServe.getWeather(this.txtCityName)
       .then(res => this.temperature = res)

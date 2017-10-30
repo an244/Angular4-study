@@ -14,4 +14,12 @@ export class WeatherService {
          .then( res => res.json())
          .then(resJSON => resJSON.main.temp);
     }
+
+    getLocalhost3000() {
+        const url = 'http://localhost:3000/';
+        return this.http.get(url)
+         .toPromise()
+         .then( res => res.json())
+         .then(resJSON => resJSON.name);
+    }
 }
