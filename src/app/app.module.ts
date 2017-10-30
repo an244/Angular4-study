@@ -23,6 +23,7 @@ import { RoundPipe } from '../round.pipe';
 // de su dung Service, them trong phan imports[] nua
 import { IpComponent } from '../ip.component';
 import {HttpModule} from '@angular/http';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {HttpModule} from '@angular/http';
     CardComponent,
     LearnPipeComponent,
     IpComponent,
-    RoundPipe
+    RoundPipe,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
